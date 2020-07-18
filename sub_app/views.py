@@ -4,9 +4,10 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 def home(request):
-	print('here u go')
+	
 	images=image_classification.objects.all()
 	url=images[len(images)-1].pic.url
+	print('here u go',url)
 	return render(request,'home.html',{'print':"every thing ok",'image':url})
 
 def uploadImage(request):
